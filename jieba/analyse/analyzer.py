@@ -22,7 +22,7 @@ class ChineseTokenizer(Tokenizer):
         words = jieba.tokenize(text, mode="search")
         token = Token()
         for (w, start_pos, stop_pos) in words:
-            if not accepted_chars.match(w) and len(w) <= 1:
+            if not accepted_chars.match(w) and len(w) <= 2:
                 continue
             token.original = token.text = w
             token.pos = start_pos
